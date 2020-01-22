@@ -1,0 +1,84 @@
+page-bank-transfer {
+    .list-order{
+        margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 15px;
+        padding: 5px 10px;
+        position: relative;
+    }
+    .done{
+        position: absolute;
+        bottom: 12px;
+        color: #82b71c;
+        text-decoration: underline
+    }
+    .bg-brown {
+        text-align: center;
+        overflow: hidden;
+        padding: 7px;
+    }
+    .bg-brown h4{
+        color: #fff;
+        margin: 5px 0 !important;
+        font-size: 13px
+    }
+    .bg-bloock {
+        text-align: center;
+        margin: 10px 0
+    }
+    .bg-bloock h4 {
+        border: 1px solid #DDD;
+        margin: 0px !important;
+        padding: 12px;
+        color: #a5a5a5
+    }
+    .bg-bloock .row:nth-child(1),
+    .bg-bloock .row:nth-child(3){
+        background: #e4e4e4
+    }
+    .bg-bloock .row:nth-child(2),
+    .bg-bloock .row:nth-child(4){
+        background: #eee
+    }
+    .bg-bloock .row:nth-child(1) .col:nth-child(1) h4,
+    .bg-bloock .row:nth-child(2) .col:nth-child(1) h4,
+    .bg-bloock .row:nth-child(3) .col:nth-child(1) h4{
+        border-bottom: 0px;
+        border-left: 0px
+    }
+    .bg-bloock .row:nth-child(1) .col:nth-child(2) h4,
+    .bg-bloock .row:nth-child(2) .col:nth-child(2) h4,
+    .bg-bloock .row:nth-child(3) .col:nth-child(2) h4{
+        border-bottom: 0px
+    }
+    .bg-bloock .row:nth-child(4) .col:nth-child(1) h4{
+        border-left: 0
+    }
+    .inner-input{
+        position: relative;
+    }
+    .inner-input span{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #959595;
+    }
+    .btn-button{
+        width: 50%;
+        margin: 10px auto;
+        display: table
+    }
+    .label-error{
+        position: relative;
+        color: #82b71c;
+        text-align: center
+    }
+    .upload{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 17px;
+        background: #FFF;
+    }
+}

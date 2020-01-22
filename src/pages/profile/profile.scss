@@ -1,0 +1,36 @@
+page-profile {
+    .btn-button{
+        text-align: center;
+        text-decoration: underline;
+        display: table
+    }
+    .profile{
+        position: relative;
+    }
+    .edit{
+        position: absolute;
+        top: 0;
+        max-width: 25px;
+    }
+    .user{
+        margin: 10px 0;
+        text-align: center;
+        padding: 5px 0;
+    }
+    .user img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 1px solid #82b71c;
+        padding: 3px;
+    }
+    .user h3{
+        font-weight: bold
+    }
+    h4{
+        font-size: 16px
+    }
+    p{
+        color: rgb(177, 177, 177)
+    }
+}

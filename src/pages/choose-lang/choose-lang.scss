@@ -1,0 +1,33 @@
+page-choose-lang {
+    .content {
+        background-color: #fff;
+    }
+    .lang{
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 90%;
+        right: 0;
+        left: 0;
+        margin: auto
+    }
+    .lang img{
+        max-width: 140px;
+        margin-bottom: 30px
+    }
+    h3{
+        font-family: Sukar !important;
+        font-size: 18px
+    }
+    button{
+        width: 150px !important;
+        display: table;
+        margin: 15px auto !important
+    }
+    button:hover{
+        background: #82b71c;
+        color: #FFF !important;
+        border: 1px solid #82b71c !important
+    }
+}

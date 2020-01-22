@@ -1,0 +1,8 @@
+{
+  "name": "hdaaek-provider",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

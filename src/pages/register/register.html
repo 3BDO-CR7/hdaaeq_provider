@@ -1,0 +1,88 @@
+<ion-content padding>
+
+  <div class="form-control">
+
+    <img src="assets/imgs/logo.png">
+
+    <h3 class="green">{{ 'SignUp' | translate }}</h3>
+
+    <form [formGroup]="signUp">
+
+    <div class="inner-input">
+        <input type="text" formControlName="name" placeholder="{{ 'username' | translate }}">
+        <ion-label class="label-error"
+            *ngIf="!signUp.controls.name.valid && (signUp.controls.name.dirty || signUp.controls.name.touched)">
+            {{ 'Enteruser' | translate }}
+        </ion-label>
+    </div>
+
+     <div class="inner-input">
+      <input formControlName="email" name="email" type="email" placeholder="{{ 'email' | translate }}" >
+       <ion-label class="label-error"
+       *ngIf="!signUp.controls.email.valid && (signUp.controls.email.dirty || signUp.controls.email.touched)">
+          {{ 'Enteremail' | translate }}
+      </ion-label> 
+    </div>
+
+    <ion-list>
+        <ion-item>
+            <ion-label [(ngClass)]="iconRtl" class="label-list">{{ 'country' | translate }}</ion-label>
+            <ion-select #C (ionChange)="country_cities(C.value)" formControlName="country_id" okText="{{ 'okay' | translate }}" cancelText="{{ 'dismiss' | translate }}">
+                <ion-option *ngFor="let country of countries" value="{{ country?.id }}">{{ country?.name }}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item>
+            <ion-label [(ngClass)]="iconRtl" class="label-list">{{ 'city' | translate }}</ion-label>
+            <ion-select formControlName="city_id" okText="{{ 'okay' | translate }}" cancelText="{{ 'dismiss' | translate }}">
+                <ion-option *ngFor="let citys of cities" value="{{ citys?.id }}">{{ citys?.name }}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <div class="inner-input">
+        <input type="tel" formControlName="phone" name="phone" placeholder="{{ 'phone' | translate }}">
+        <span class="showcode" [(ngClass)]="iconLtr">{{ code }}</span>
+    </div>
+    <ion-label class="label-error"
+               *ngIf="!signUp.controls.phone.valid && (signUp.controls.phone.dirty || signUp.controls.phone.touched)">
+        {{ 'Enterphone' | translate }}
+    </ion-label>
+    
+    <div class="location" (click)="openMap()">
+        <input type="text" formControlName="address" placeholder="{{address}}" name="address" disabled>
+        <ion-icon name="pin" [(ngClass)]='iconLtr'></ion-icon>
+        <ion-label class="label-error"
+            *ngIf="!signUp.controls.address.valid &&
+            (signUp.controls.address.dirty || signUp.controls.address.touched)" >
+            {{ 'Enterpassword' | translate }}
+        </ion-label> 
+    </div>
+
+    <div class="inner-input">
+      <input formControlName="password" name="password" type="password" placeholder="{{ 'password' | translate }}" >
+       <ion-label class="label-error"
+          *ngIf="!signUp.controls.password.valid &&( signUp.controls.password.dirty||signUp.controls.password.touched)" stacked>
+          {{ 'Enterpassword' | translate }}
+      </ion-label> 
+    </div>
+
+    <div class="inner-input">
+      <input formControlName="confirmPassword" type="password" placeholder="{{ 'ConfirmPassword' | translate }}" >
+       <ion-label class="label-error"
+      *ngIf="signUp.controls.confirmPassword.touched && signUp.hasError('mismatchedPasswords') && signUp.controls.password.valid" stacked>
+          {{ 'Enteroldpass' | translate }}
+      </ion-label> 
+    </div>
+
+    <button [disabled]="!signUp.valid" class="btn-button bg-green" (click)="goHome()">{{ 'SignUp' | translate }}</button>
+  
+    </form>
+    
+    <p class="brown">{{ 'haveaccount' | translate }} <a class="green" (click)="goLogin()">{{ 'logins' | translate }}</a></p>
+
+  </div>
+
+</ion-content>

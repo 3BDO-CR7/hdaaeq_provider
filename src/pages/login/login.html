@@ -1,0 +1,85 @@
+<ion-content padding>
+    <div class="form-control">
+
+        <img src="assets/imgs/logo.png">
+
+        <h3 class="green">{{ 'logins' | translate }}</h3>
+
+        <ion-segment class="segment" [(ngModel)]="pet">
+            <ion-segment-button value="loginPhone">
+                {{ 'loginPhone' | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="loginEmail">
+                {{ 'loginEmail' | translate }}
+            </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="pet">
+            <div *ngSwitchCase="'loginPhone'">
+                <form [formGroup]="userPhone">
+
+                    <div class="inner-input">
+                        <input type="tel" formControlName="phone" name="phone"   placeholder="{{ 'phone' | translate }}">
+                        <ion-list class="list-code" [(ngClass)]="iconLtr">
+                            <ion-item>
+                                <!--<ion-label class="label-list">{{ 'code' | translate }}</ion-label>-->
+                                <ion-select [(ngModel)]="countryCode"    formControlName="country_code" okText="{{ 'okay' | translate }}" cancelText="{{ 'dismiss' | translate }}">
+                                    <ion-option  *ngFor="let code of codes"   value="{{ code?.code }}">{{ code?.code }}</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+
+                    <ion-label class="label-error"
+                               *ngIf="!userPhone.controls.phone.valid && (userPhone.controls.phone.dirty || userPhone.controls.phone.touched)">
+                        {{ 'Enterphone' | translate }}
+                    </ion-label>
+
+                    <div class="inner-input">
+                        <input formControlName="password" name="password" type="password" placeholder="{{ 'password' | translate }}" >
+                        <ion-label class="label-error"
+                                   *ngIf="!userPhone.controls.password.valid && (userPhone.controls.password.dirty || userPhone.controls.password.touched)">
+                            {{ 'Enterpassword' | translate }}
+                        </ion-label>
+                    </div>
+
+                    <p (click)="goForgetPasswor()">{{ 'forgetPassword' | translate }}</p>
+
+                    <button class="btn-button bg-green" [disabled]="!userPhone.valid" (click)="goUserPhone()">{{ 'login' | translate }}</button>
+
+                </form>
+            </div>
+
+            <div *ngSwitchCase="'loginEmail'">
+                <form [formGroup]="userEmail">
+
+                    <div class="inner-input">
+                        <input type="email" formControlName="email" name="email" placeholder="{{ 'email' | translate }}">
+                        <ion-label class="label-error"
+                                   *ngIf="!userEmail.controls.email.valid && (userEmail.controls.email.dirty || userEmail.controls.email.touched)">
+                            {{ 'Enteremail' | translate }}
+                        </ion-label>
+                    </div>
+
+                    <div class="inner-input">
+                        <input formControlName="password" name="password" type="password" placeholder="{{ 'password' | translate }}" >
+                        <ion-label class="label-error"
+                                   *ngIf="!userEmail.controls.password.valid && (userEmail.controls.password.dirty || userEmail.controls.password.touched)">
+                            {{ 'Enterpassword' | translate }}
+                        </ion-label>
+                    </div>
+
+                    <p (click)="goForgetPasswor()">{{ 'forgetPassword' | translate }}</p>
+
+                    <button class="btn-button bg-green" [disabled]="!userEmail.valid" (click)="goUserEmail()">{{ 'login' | translate }}</button>
+
+                </form>
+            </div>
+        </div>
+
+        <a class="brown" (click)="goVistor()">{{ 'LoginVisitor' | translate }}</a>
+
+        <button class="green" (click)="goRegister()">{{ 'SignUp' | translate }}</button>
+
+    </div>
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ 'SendQuote' | translate }}</ion-title>
+    </ion-navbar>
+    <form [formGroup]="sendOffer">
+
+      <div class="block-body">
+          <div class="body-app shadow">
+
+              <div class="bg-block">
+                <div *ngFor="let serv of serves">
+                  <ion-grid class="no-padding">
+                      <ion-row>
+                        <ion-col col-8>
+                            <div class="block-title">
+                                <h4>{{ serv?.service_name }}</h4>
+                                <span *ngIf="serv?.unit_details != ''" [(ngClass)]="spanRtl" class="green">{{ serv?.unit_details }}</span>
+                            </div>
+                        </ion-col>
+                        <ion-col col-4>
+                            <input
+                                (focusout)      = "getPrice($event.target,serv.unit_details)"
+                                value           = ""
+                                class           = "input-price"
+                                type            = "tel"
+                                id              = "{{serv?.cart_service_id}}"
+                                placeholder     = "{{ (serv?.unit_details != '') ? ( 'count' | translate) : ('price' | translate) }}"
+                                min             = "{{serv?.unit_details}}"
+                            >
+                            <input
+                                id              = "{{serv?.category_id}}"
+                                class           = "input_category"
+                                hidden
+                            >
+                        </ion-col>
+                      </ion-row>
+                  </ion-grid>
+                </div>
+              </div>
+
+              <div class="item-input" (click)="openCalender()">
+                <input type="text" formControlName="date" name="date" placeholder="{{ 'selectdate' | translate }}" value="{{deta}}" disabled>
+                <span [(ngClass)]='iconDir'><ion-icon name="calendar"></ion-icon></span>
+              </div>
+
+              <div class="item-input">
+                <input type="text" placeholder="{{ 'selecttime' | translate }}">
+                <span [(ngClass)]='iconDir'><ion-icon name="time"></ion-icon></span>
+                <ion-datetime formControlName="time" name="time" displayFormat="h:mm" doneText="{{ 'okay' | translate }}" cancelText="{{ 'dismiss' | translate }}" aria-disabled="disabled"></ion-datetime>
+              </div>
+
+              <p class="text-center brown">{{ 'TotalCost' | translate }} <span class="green">{{total}}</span>  {{ 'RS' | translate }}</p>
+
+              <button class="btn-button bg-green" (click)='Sent()'>{{ 'Sent' | translate }}</button>
+              <!-- [disabled]="!sendOffer.valid" -->
+          </div>
+      </div>
+    </form>
+
+  </ion-header>
+  
+  <ion-content padding>
+  
+  
+  
+  </ion-content>
+  

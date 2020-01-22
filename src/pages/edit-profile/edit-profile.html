@@ -1,0 +1,76 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ 'editprofile' | translate }}</ion-title>
+    </ion-navbar>
+
+    <div class="block-body">
+        <div class="body-app shadow">
+
+            <div class="profile">
+                          
+                <div class="user">
+                    <div class="userimg" (click)="presentActionSheet()">  
+                      <img src="{{avatar}}">
+                    </div>
+                    <h3>{{ 'changeimg' | translate }}</h3>
+                </div>
+
+                <form [formGroup]="editProfile">
+
+                    <div class="inner-input">
+                      <input type="text" formControlName="name" value="{{user?.name}}" placeholder="{{ 'username' | translate }}" required>
+                      <ion-label class="label-error" *ngIf="editProfile.controls.name.touched && editProfile.controls.name.invalid">
+                          {{ 'Enteruser' | translate }}
+                      </ion-label>
+                    </div>
+
+                    <div class="inner-input">
+                      <input type="email" formControlName="email" value="{{user?.email}}" placeholder="{{ 'email' | translate }}" required class="shadow">
+                      <ion-label class="label-error" *ngIf="editProfile.controls.email.touched && editProfile.controls.email.invalid">
+                          {{ 'Enteremail' | translate }}
+                      </ion-label>
+                    </div>
+
+                    <div class="inner-input">
+                      <input type="tel" formControlName="phone" maxlength="10" value="{{user?.phone}}" placeholder="{{ 'phone' | translate }}" required class="shadow">
+                      <ion-label class="label-error" *ngIf="editProfile.controls.phone.touched && editProfile.controls.phone.invalid">
+                          {{ 'Enterphone' | translate }}
+                      </ion-label>
+                    </div>
+
+                    <ion-list>
+                      <ion-item>
+                        <ion-label [(ngClass)]="iconRtl" class="label-list">{{ 'country' | translate }}</ion-label>
+                        <ion-select #C formControlName="country_id" okText="{{ 'okay' | translate }}" cancelText="{{ 'dismiss' | translate }}">
+                          <ion-option *ngFor="let country of countries" value="{{ country?.id }}">{{ country?.name }}</ion-option>          
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+                
+                    <ion-list>
+                      <ion-item>
+                        <ion-label [(ngClass)]="iconRtl" class="label-list">{{ 'city' | translate }}</ion-label>
+                        <ion-select formControlName="city_id" okText="{{ 'okay' | translate }}" cancelText="{{ 'dismiss' | translate }}">
+                          <ion-option *ngFor="let citys of cities" value="{{ citys?.id }}">{{ citys?.name }}</ion-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+
+                    <button class="btn-button green" (click)="goLocation()">{{ 'Locationmap' | translate }}</button>
+                
+                    <button class="btn-button bg-green" (click)="goProfile()">{{ 'save' | translate }}</button>
+
+                </form>
+
+        </div>
+        </div>
+    </div>
+
+  </ion-header>
+
+<ion-content padding>
+
+  
+
+</ion-content>

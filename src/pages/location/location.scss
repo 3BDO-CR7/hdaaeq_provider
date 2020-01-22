@@ -1,0 +1,20 @@
+page-location {
+ion-header {
+    min-height: auto;
+}    
+#map {
+    width: 100%;
+    height: 100vh;
+}
+.btn-button {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 25px auto;
+}
+.ion-md-arrow-back:before {
+    content: "\f2c0";
+}
+}

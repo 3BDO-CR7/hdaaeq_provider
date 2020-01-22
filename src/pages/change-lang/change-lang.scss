@@ -1,0 +1,61 @@
+page-change-lang {
+    .lang{
+        margin: 30px 0
+    }
+    .bg-green{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        width: 50%;
+        margin: auto
+    }
+    .radios .checkmark {
+        top: 4px !important;
+        height: 40px;
+        width: 130px;
+        border-radius: 50px;
+        border: 1px solid #c5c5c5;
+        margin: 0px auto !important;
+        display: table;
+        background: transparent
+    }
+    .radios input:checked ~ .checkmark {
+        background-color: transparent;
+        border: 0;
+    }
+    .radios:hover input ~ .checkmark {
+        background-color: transparent;
+        border: 1px solid #c5c5c5;
+    }
+    .radios {
+        margin: 13px 0;
+    }
+    .radios .checkmark:after {
+        display: block;
+    }
+    .radios input:checked ~ .checkmark:after {
+        background: transparent;
+        color: #82b71c
+    }
+    .radios input:checked ~ .checkmark{
+        border: 1px solid #82b71c !important;
+    }
+    .radios .checkmark:after {
+        top: 4px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        width: 130px;
+        height: 40px;
+        border-radius: 0%;
+        background: transparent;
+        text-align: center
+    }
+    .lang .radios:first-child .checkmark:after {
+        content: "العربية";
+    }
+    .lang .radios:last-child .checkmark:after {
+        content: "English";
+    }
+}

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'home' | translate }}</ion-title>
+    <button class="btn" menuToggle [(ngClass)]='iconRtl'><img src="assets/imgs/menu.png"></button>
+    <button class="btn" (click)="openNoty()" [(ngClass)]='iconLtr'><img src="assets/imgs/bell.png"></button>
+  </ion-navbar>
+
+  <div class="block-body">
+    <div class="body-app shadow">
+        
+        <div class="vistor">
+            <img src="assets/imgs/logo.png">
+            <p>{{ 'Rigster' | translate }}</p>
+            <button class="btn-button bg-green" (click)="gologin()">{{ 'CreateNow' | translate }}</button>
+        </div>
+
+    </div>
+  </div>
+</ion-header>
+
+<ion-content padding>
+
+
+
+</ion-content>

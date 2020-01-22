@@ -1,0 +1,105 @@
+<div class="site-mune">
+    
+    <ion-menu id="right" [content]="content" side="right" type="overlay">
+        <ion-content>
+
+            <img src="assets/imgs/top.png" class="img top">
+            <img src="assets/imgs/down.png" class="img down">
+
+            <div class="header">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12>
+                            <img src="{{image}}" class="animated swing">
+                            <h3>{{name}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+
+            <button *ngIf="hiden" class="active" (click)="goHome()" menuClose>
+                {{ 'home' | translate }}
+            </button>
+            <button (click)="goRequest()" menuClose>
+                {{ 'requests' | translate }}
+            </button>
+            <button (click)="goClosed()" menuClose>
+                {{ 'closedorders' | translate }}
+            </button>
+            <button (click)="goAbout()" menuClose>
+                {{ 'AboutApp' | translate }}
+            </button>
+            <button (click)="goShare()" menuClose>
+                {{ 'shareapp' | translate }}
+            </button>
+            <button (click)="goContact()" menuClose>
+                {{ 'contact' | translate }}
+            </button>
+            <button (click)="goSetting()" menuClose>
+                {{ 'setting' | translate }}
+            </button>
+            <div *ngIf="login_user == 1">
+                <button (click)="goLogIn()" menuClose>
+                    {{ text }}
+                </button>
+            </div>
+            <div *ngIf="login_user == 0">
+                <button (click)="goLogIn()" menuClose>
+                    {{ text }}
+                </button>
+            </div>
+        </ion-content>
+    </ion-menu>
+
+    <ion-menu id="left" [content]="content" side="left" type="overlay">
+        <ion-content>
+
+            <img src="assets/imgs/top.png" class="img top">
+            <img src="assets/imgs/down.png" class="img down">
+
+            <div class="header">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12>
+                            <img src="{{image}}" class="animated swing">
+                            <h3>{{name}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+
+            <button *ngIf="hiden" class="active" (click)="goHome()" menuClose>
+                {{ 'home' | translate }}
+            </button>
+            <button (click)="goRequest()" menuClose>
+                {{ 'requests' | translate }}
+            </button>
+            <button (click)="goAbout()" menuClose>
+                {{ 'AboutApp' | translate }}
+            </button>
+            <button (click)="goShare()" menuClose>
+                {{ 'shareapp' | translate }}
+            </button>
+            <button (click)="goContact()" menuClose>
+                {{ 'contact' | translate }}
+            </button>
+            <button (click)="goSetting()" menuClose>
+                {{ 'setting' | translate }}
+            </button>
+            <div *ngIf="login_user == 1">
+                <button (click)="goLogIn()" menuClose>
+                    {{ text }}
+                </button>
+            </div>
+            <div *ngIf="login_user == 0">
+                <button (click)="goLogIn()" menuClose>
+                    {{ text }}
+                </button>
+            </div>
+        </ion-content>
+    </ion-menu>
+
+</div>
+    
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+    

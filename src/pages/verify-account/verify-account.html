@@ -1,0 +1,21 @@
+<ion-content padding>
+
+  <form class="form-control" [formGroup]="verify">
+
+    <img src="assets/imgs/logo.png">
+
+    <h3 class="green">{{ 'logins' | translate }}</h3>
+
+    <div class="inner-input">
+      <input type="tel" formControlName="code" name="code" placeholder="{{ 'ValidationCode' | translate }}">
+      <ion-label class="label-error"
+      *ngIf="!verify.controls.code.valid && (verify.controls.code.dirty || verify.controls.code.touched)">
+          {{ 'Enterphone' | translate }}
+      </ion-label> 
+    </div>
+
+    <button class="btn-button bg-green" [disabled]="!verify.valid" (click)="goHome()">{{ 'login' | translate }}</button>
+
+  </form>
+
+</ion-content>

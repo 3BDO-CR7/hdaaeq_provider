@@ -1,0 +1,97 @@
+page-send-quote {
+    .bg-block{
+        margin: 10px 0
+    }
+    .bg-block input{
+        text-align: center;
+        margin: 0 !important;
+        padding: 5px !important;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+    .block-title{
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #d6d6d6;
+        color: #9e9e9e;
+        margin: -1px 0px !important;
+        font-size: 12px;
+        padding-bottom: 5px;
+        position: relative;
+    }
+    .block-title h4{
+        margin: 0 !important;
+        width: 145px;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .block-title span{
+        overflow: hidden;
+        text-align: center;
+        font-size: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #a06c51;
+        border-radius: 5px;
+        line-height: 25px;
+        color: #fff !important;
+        padding: 0px 7px;
+    }
+    hr{
+        height: 1px;
+        width: 80%;
+        margin: 10px auto;
+        display: table;
+        background: #DDD
+    }
+    .item-input{
+        position: relative;
+        margin: 10px 0
+    }
+    .item-input span{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #959595;
+    }
+    .btn-button{
+        width: 50%;
+        margin: auto;
+        display: table;
+        //position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+    }
+    .datetime {
+        padding: 12px 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #a5a5a5;
+    }
+    .datetime-text {
+        background: #FFF;
+        width: 150px;
+    }
+    .datetime-placeholder {
+        background: transparent;
+    }
+    .text-center{
+        width: 100%;
+        //position: absolute;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        font-size: 16px
+    }
+    .text-center span{
+        font-weight: bold;
+        margin: 0px 3px;
+        font-size: 15px
+    }
+}

@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'Current' | translate }}</ion-title>
+  </ion-navbar>
+
+  <div class="block-body">
+      <div class="body-app shadow">
+        <h3 class="brown">{{ 'Details' | translate }}</h3>
+        <div class="list-order">
+            <h4>{{ 'Ordernumber'    | translate }}  : <span>{{ data?.id }}</span></h4>
+            <h4>{{ 'Daterequest'    | translate }}  : <span>{{ data?.date }}</span></h4>
+            <!-- <h4>{{ 'RequestStatus'  | translate }}  : <span>{{ data?.status }}</span></h4> -->
+        </div>
+        <h3 class="brown">{{ 'Services' | translate }}</h3>
+        <div class="up_ip_block">
+          <div class="ip_block" *ngFor="let serv of arr_order">
+              <div class="up-section">
+                  <h3 (click)="goFading(serv.cart_id,$event)" id="first-{{serv.cart_id}}">
+                    {{ serv?.category_name }}
+                    <ion-icon name="arrow-dropdown"></ion-icon>
+                  </h3>
+                  <div class="view-section" id="second-{{serv.cart_id}}">
+                      <div *ngIf="serv?.has_details == 1;">
+                          <ion-slides *ngIf="serv.images.length !=0 && serv.images.length != undefined" spaceBetween="5px" pager="true" autoplay="3000" speed="3000">
+                      
+                              <ion-slide *ngFor="let img of serv.images">
+                                <img src="{{img?.image}}">
+                              </ion-slide>
+                        
+                          </ion-slides>
+                      </div>  
+                      <div class="list-order" *ngIf="serv?.has_details == 1;">
+                          <p>{{ serv?.cart_desc }}</p>
+                      </div>
+                      <div *ngIf="serv?.has_details == 1;">
+                          <div class="sup_serv" *ngFor="let sup_serv of serv.services">
+                              <h3>
+                                - {{ sup_serv?.service_name }}
+                              </h3>
+                          </div>  
+                      </div>
+                      <div class="list-order" *ngIf="serv?.has_details == 0;">
+                        <div no-padding *ngFor="let up_serv of serv.services">
+                            <div>
+                                <h4 class="up_ser">* {{ up_serv?.service_name }} *</h4>
+                                <div class="ma_sup" *ngFor="let sup_serv of up_serv.sub_services">
+                                  <h6> - {{ sup_serv?.sub_service_name }} 
+                                    <span class="brown">{{ sup_serv?.unit_details }}</span>
+                                  </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <button class="btn-button bg-green" (click)="SendQuote()">{{ 'SendQuote' | translate }}</button>
+      </div>
+  </div>
+    
+</ion-header>
+
+<ion-content padding>
+
+
+
+</ion-content>

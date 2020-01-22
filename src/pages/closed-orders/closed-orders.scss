@@ -1,0 +1,31 @@
+page-closed-orders {
+    .list-order{
+        margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 15px;
+        padding: 5px 10px;
+        position: relative;
+    }
+    .done{
+        position: absolute;
+        bottom: 12px;
+        color: #82b71c;
+        text-decoration: underline
+    }
+    .bg-brown {
+        text-align: center;
+        overflow: hidden;
+    }
+    h4{
+        color: #fff;
+        margin: 5px 0 !important;
+        font-size: 12px
+    }
+    .list-order h3 span{
+        color: #8a4c2d;
+        margin: 0px 5px
+    }
+    a{
+        color: #FFF
+    }
+}

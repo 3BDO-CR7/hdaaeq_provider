@@ -1,0 +1,17 @@
+
+  <ion-header>
+
+      <ion-navbar>
+        <ion-title>{{ 'selectlocation' | translate }}</ion-title>
+      </ion-navbar>
+    </ion-header>
+  
+  <ion-content>
+  
+    <div class="body">
+      <div #map id="map"></div>
+      <button [disabled]="model.lat =='' || model.lng == '' " class="btn-button bg-green" (click)="dismiss()">{{ 'confirm' | translate }}</button>
+    </div>
+  
+  </ion-content>
+  

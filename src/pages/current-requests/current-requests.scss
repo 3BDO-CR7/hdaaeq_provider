@@ -1,0 +1,106 @@
+page-current-requests {
+    .list-order{
+        margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 15px;
+        padding: 5px 10px
+    }
+    .list-order h4{
+        margin: 5px 0px !important
+    }
+    .list-order h6{
+        display: flex;
+        justify-content: space-between;
+    }
+    .list-order span{
+        color: #8a4c2d;
+        margin: 0px 2px;
+        font-size: 11px;
+        display: inline-block
+    }
+    .up_ip_block{
+        // height: 260px;
+        overflow-y: auto
+    }
+    .up-section {
+        height: auto !important;
+        overflow-y: initial;
+    }
+    .ip_block .list-order{
+        margin-top: 0 !important
+    }
+    p {
+        color: #6d6c72;
+        font-size: 12px;
+        margin: 5px 0;
+    }
+    img{
+        border-radius: 10px;
+        margin: 0
+    }
+    ul li {
+        display: block;
+        margin: 5px 0
+    }
+    .up-section h3{
+        border: 1px solid #c5c5c5;
+        border-radius: 50px;
+        padding: 5px 12px;
+        margin: 10px 0 !important;
+        color: #9d9ca1;
+        display: flex;
+        justify-content: space-between;
+        line-height: 22px;
+    }
+    .up-section h3 ion-icon{
+        color: #c5c5c5;
+        font-size: 25px !important;
+        vertical-align: middle;
+        position: relative;
+    }
+    .view-section{
+        overflow: hidden;
+        transition: 0.8s;
+        opacity: 0;
+        max-height: 0;
+        visibility: hidden;
+    }
+    .fading{
+        opacity: 1 !important;
+        max-height: 350px !important;
+        visibility: initial !important;
+        transition: 0.8s
+    }
+    .swiper-pagination-bullet {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background: #82b71c;
+        opacity: 1;
+        margin: 0 2px !important;
+        transition: 0.7s
+    }
+    .swiper-pagination-bullet-active{
+        background: #8a4c2d;
+    }
+    .swiper-pagination-fraction, 
+    .swiper-pagination-custom, 
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: 10px;
+    }
+    .ServName {
+        border-radius: 5px;
+    }
+    .green{
+        text-decoration: underline;
+        text-align: center
+    }
+    .btn-button{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 30px
+    }
+}

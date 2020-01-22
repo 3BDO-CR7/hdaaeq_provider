@@ -1,0 +1,47 @@
+<ion-header>
+
+    <ion-navbar>
+        <button class="btn" menuToggle [(ngClass)]='iconRtl'><img src="assets/imgs/menu.png"></button>
+        <ion-title>{{ 'requests' | translate }}</ion-title>
+        <button class="btn" (click)="openNoty()" [(ngClass)]='iconLtr'><img src="assets/imgs/bell.png"></button>
+    </ion-navbar>
+
+    <div class="block-body">
+        <div class="body-app shadow">
+            <ion-segment [(ngModel)]="pet">
+                <ion-segment-button value="New-requests" (click)="newOrder()">
+                <span>{{ 'Newapp' | translate }}</span>
+                </ion-segment-button>
+                <ion-segment-button value="Current-Orders" (click)="activeOrder()">
+                <span>{{ 'Current' | translate }}</span>
+                </ion-segment-button>
+            </ion-segment>
+        
+            <div [ngSwitch]="pet">
+                <ion-list *ngSwitchCase="'New-requests'">
+                    <div class="list-order animated fadeInUp" (click)="goNewOrders(order.id)" *ngFor="let order of orders">
+                        <h4>{{ 'Ordernumber' | translate }} : <span>{{ order?.id }}</span></h4>
+                        <h4>{{ 'Daterequest' | translate }} : <span>{{ order?.date }}</span></h4>
+                        <h4>{{ 'RequestStatus' | translate }} : <span>{{ order?.status }}</span></h4>
+                    </div>
+                </ion-list>
+                
+                <ion-list *ngSwitchCase="'Current-Orders'">
+                    <div class="list-order animated fadeInUp" (click)="goCurrentOrders(active.id)" *ngFor="let active of activeorders">
+                        <h4>{{ 'Ordernumber' | translate }} : <span>{{ active?.id }}</span></h4>
+                        <h4>{{ 'Daterequest' | translate }} : <span>2/{{ active?.date }}</span></h4>
+                        <h4>{{ 'TotalCost' | translate }} : <span>{{ active?.total_price }}</span></h4>
+                        <h4>{{ 'RequestStatus' | translate }} : <span>{{ active?.status }}</span></h4>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+    </div>
+    
+  </ion-header>
+
+<ion-content padding>
+
+  
+
+</ion-content>

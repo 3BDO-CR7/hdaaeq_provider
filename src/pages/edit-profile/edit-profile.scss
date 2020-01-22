@@ -1,0 +1,46 @@
+page-edit-profile {
+    .green{
+        text-align: center;
+        text-decoration: underline;
+        display: table
+    }
+    .bg-green{
+        display: table;
+        width: 50%;
+        margin: auto
+    }
+    .profile{
+        position: relative;
+    }
+    .edit{
+        position: absolute;
+        top: 0;
+        max-width: 25px;
+    }
+    .user{
+        margin: 10px 0;
+        text-align: center;
+        padding: 5px 0;
+    }
+    .userimg{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 1px solid #cdcdcd;
+        margin: auto;
+        overflow: hidden;
+    }
+    .userimg img{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+    .user h3{
+        font-weight: bold
+    }
+    .label-error{
+        position: relative;
+        color: #82b71c;
+        text-align: center
+    }
+}

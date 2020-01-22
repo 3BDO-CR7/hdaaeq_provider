@@ -1,0 +1,63 @@
+page-request {
+    .back-button{
+        display: none !important
+    }
+    .header img{
+        max-width: 20px;
+    }
+    ion-segment {
+        border: 1px solid #ddd !important;
+        border-radius: 50px;
+        overflow: hidden;
+        margin: 15px 0
+    }
+    .segment .segment-button{
+        color:#6d6c72;
+        background: transparent;
+        border-radius: 30px;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        margin: 0px;
+        border: 0;
+        font-weight: bold
+    }
+    .segment .segment-button span{
+        position: relative;
+        z-index: 99;
+    }
+    .segment .segment-button::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: #8a4c2d;
+        width: 0%;
+        height: 100%;
+        transition: 0.5s;
+        border-radius: 30px;
+    }
+    .segment .segment-button.activated,
+    .segment .segment-button.segment-activated{
+        color: #fff;
+    }
+    .segment .segment-button.activated::before,
+    .segment .segment-button.segment-activated::before {
+        opacity: 1; 
+        width: 100%;
+    }
+    .list {
+        border: 0px solid #d6d6d6;
+        border-radius: 0px;
+        padding: 0;
+    }
+    .list-order{
+        margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 15px;
+        padding: 5px 10px
+    }
+    .list-order h4 span{
+        color: #8a4c2d;
+        margin: 0px 5px
+    }  
+}
